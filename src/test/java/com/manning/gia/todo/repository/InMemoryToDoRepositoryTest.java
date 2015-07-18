@@ -93,7 +93,7 @@ public class InMemoryToDoRepositoryTest {
         inMemoryToDoRepository.insert(toDoItem);
         List<ToDoItem> toDoItems = inMemoryToDoRepository.findAll();
 
-        assertEquals(1, toDoItems.size());
+        assertEquals(2, toDoItems.size());
         assertEquals(toDoItem, toDoItems.get(0));
         inMemoryToDoRepository.delete(toDoItem);
         toDoItems = inMemoryToDoRepository.findAll();
@@ -112,6 +112,6 @@ public class InMemoryToDoRepositoryTest {
         toDoItem.setName("Updating an item");
         inMemoryToDoRepository.update(toDoItem);
         toDoItems = inMemoryToDoRepository.findAll();
-        assertEquals("Updating an item", toDoItems.get(0).getName());
+        assertEquals("Updating an item__", toDoItems.get(0).getName());
     }
 }
